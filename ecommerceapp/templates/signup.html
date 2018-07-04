@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Signup</title>
+        <meta name="description" content="Love Authority." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+        <link rel="stylesheet" href="/static/css/style.css" />
+        <style >
+            @import url('https://fonts.googleapis.com/css?family=Hind:400,500,700');
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-family: 'Hind';
+    background-color: #000;
+    color: #fff;
+}
+.brand-logo{
+    width: 120px;
+}
+.hero{
+    background-image: url('/static/img/loginbg.jpg');
+    background-size: cover;
+    background-position: center center;
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0;
+    position: absolute;
+}
+.hero:after{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.hero .container{
+    z-index: 3;
+    position: relative;
+}
+.hero .card{
+    background: rgba(0,0,0,0.7);
+}
+a, a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+@media (min-width:576px){
+    section{
+        padding: 40px 0px;
+    }
+    .hero .card .card-block{
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+@media (max-width:576px){
+    section{
+        padding: 20px;
+    }
+}
+.bg-alt {
+    background-color: #fff;
+}
+.btn{
+    -webkit-transition: 350ms ease all;
+    transition: 350ms ease all;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: .6rem 1.5rem;
+    cursor: pointer;
+}
+.btn:hover, .btn:focus {
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.15);
+}
+.btn-primary{
+    background-color: #ff5722 !important;
+    border-color: #ff5722 !important;
+}
+.btn-primary:hover, .btn-primary:focus{
+    color: #fff !important;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-control{
+    height: 45px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #FFFFFF;
+}
+.form-control:focus {
+    border-color: #FFFFFF;
+    background-color: transparent;
+    color: #FFFFFF;
+}
+.border-none{
+    border: none !important;
+    border-color: transparent !important;
+}
+.text-primary{
+    color: #ff5722 !important;
+}
+.custom-control-input:checked~.custom-control-indicator {
+    color: #fff;
+    background-color: #ff5722;
+    outline-color: #ff5722;
+}
+.content-divider.center {
+    text-align: center;
+}
+.content-divider {
+    position: relative;
+    z-index: 1;
+}
+.content-divider > span, .content-divider > a {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.content-divider > span:before, .content-divider > a:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    background-color: #ddd;
+    width: 100%;
+    z-index: -1;
+}
+.social-login .btn{
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0.6rem 0;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.social-login .btn-twitter {
+    background: #00aced;
+}
+.social-login .btn-facebook {
+    background: #3b5998;
+}
+.social-login .btn-google {
+    background: #dd4b39;
+}
+.social-login .btn-linkedin {
+    background: #007bb6;
+}
+.social-login .btn-github {
+    background: #000000;
+}
+        </style>
+    </head>
+    <body>
+        <!--hero section-->
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-8 mx-auto">
+                        <div class="card border-none">
+                            <div class="card-body">
+                                <div class="mt-2 text-center">
+                                    <h2>Create Your Account</h2>
+                                </div>
+                                <p class="mt-4 text-white lead text-center">
+                                    Sign up to get started with Authority
+                                </p>
+                                <div class="mt-4">
+                                    <form class="" action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="username" value="" placeholder="Enter username">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" value="" placeholder="Enter email address">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" name="password" value="" placeholder="Enter password">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" name="confirm_password" value="" placeholder="Confirm password">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="file" class="form-control" name="pic">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-block" value="Register">Create Account</button>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                    <p class="content-divider center mt-4"><span>or</span></p>
+                                </div>
+
+                                <p class="text-center">
+                                    Already have an account? <a href="/login/">Login Now</a>
+                                </p>
+                                <p class="text-center">
+                                    <a href="/">Home</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
